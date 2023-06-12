@@ -1,6 +1,6 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
+import { FiSearch } from 'react-icons/fi'
 
 
 const Search = ({artistName, onChangeName}) => {
@@ -10,9 +10,9 @@ const Search = ({artistName, onChangeName}) => {
     }
 
     return (
-        <Form onSubmit={handleSubmit}>
-            <Form.Control type='text' placeholder='Enter an Artist' value={artistName} onChange={onChangeName}/>
-            <Button type='submit'>Submit</Button>
+        <Form onSubmit={handleSubmit} style={{ display: 'flex'}}>
+            <FiSearch className="w-5 h-5 ml-4"/>
+            <Form.Control type='text' placeholder='Enter an Artist or Song' value={artistName} onChange={onChangeName}/>
 
         </Form>
     )
