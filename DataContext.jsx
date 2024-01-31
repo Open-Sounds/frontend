@@ -5,6 +5,7 @@ export const DataContext = React.createContext();
 
 export const DataProvider = ({ children }) => {
     const [data, setData] = React.useState(null);
+    const apiKey = import.meta.env.VITE_RAPID_API_KEY;
 
     React.useEffect(() => {
         const fetchData = async () => {
@@ -17,7 +18,7 @@ export const DataProvider = ({ children }) => {
               offset: '0'
             },
             headers: {
-              'X-RapidAPI-Key': 'e309ecbf14mshda0929a1f488b73p16f26fjsn26245845b51e',
+              'X-RapidAPI-Key': apiKey,
               'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
             }
           };
