@@ -1,32 +1,29 @@
-import React from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { Home } from './routes/Home'
-import { Playlist } from './routes/Playlist'
+import * as React from 'react';
+import axios from 'axios';
 
-function App() {
-  
-  const router = createBrowserRouter([
-    { path: "/", element: <Home/>},
-    { path: "/playlist", element: <Playlist/>}
+import Home from './pages/home/home';
+import NavigationBar from './components/NavigationBar';
+import Footer from './components/Footer';
+import { DataProvider, DataContext } from '../DataContext';
 
-  ])
+import { BrowserRouter as Router, 
+  Routes,
+  Route,
+  Link
+} from 'react-router-dom';
+
+const App = () => {
+
   return (
-
-    <>
-      <RouterProvider router={router}/>
-    </>
-    /*
-    <>
-      <Navigation/> 
-      <Search artistName={artistName} onChangeName={handleArtistName}/>
-      <ArtistProfile artist={artist} />
-      <Container> 
-        <Row> 
-          <Col>AI Covers Section</Col>
-        </Row>
-      </Container>
-    </>
-    */
+    <DataProvider>
+      <Router>
+          <NavigationBar/>
+          <Routes>
+            <Route path='/' element={<Home />} />
+          </Routes>
+          <Footer />
+      </Router>
+    </DataProvider>
   )
 }
 
