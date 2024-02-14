@@ -7,32 +7,30 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import Button from 'react-bootstrap/Button';
 import { DataContext } from '../../../DataContext';
 
-const Home = () => {
-    const { dataFiltered, playlist, addPlaylist, removePlaylist } = React.useContext(DataContext)
+const Playlist = () => {
+    const { data, playlist, removePlaylist } = React.useContext(DataContext);
 
-    // console.log("TEST: ", data);
-
-// render the component only when data is available 
-    if( !dataFiltered ){
+    if( !data ){
         return(
             <>
                 <p style={{ textAlign: 'center'}}> Loading... </p>
             </>
         )
     }
+    console.log("LIST: ", playlist);
 
+    const list = data.filter( item => {
+        // console.log("ITEM: ", item?.track?.name);
+        return playlist.includes(item?.track?.name)
+    })
+
+    console.log('FILTERED: ', list);
     return (
         <>
-            <h1 style={{ textAlign: 'center' }}>
-                Top 50 - Global
-            </h1>
-            <h3 style={{ textAlign: 'center' }}>
-                Your daily update of the most played tracks right now - Global
-            </h3>
-
+            <h1>playlist</h1>
             <Container fluid={'true'}>
                 <Row xs={'auto'} className='justify-content-center'>
-                    {dataFiltered.map( artist => (
+                    {list.map( artist => (
                         <OverlayTrigger 
                             trigger='click'
                             overlay={
@@ -65,9 +63,8 @@ const Home = () => {
                     ))}
                 </Row>
             </Container>
-
         </>
     )
 }
 
-export default Home; 
+export default Playlist; 

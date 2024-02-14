@@ -2,8 +2,9 @@ import * as React from 'react';
 import axios from 'axios';
 
 import Home from './pages/home/home';
-import NavigationBar from './components/NavigationBar';
-import Footer from './components/Footer';
+import Playlist from './pages/playlist/playlist';
+import NavigationBar from './components/NavigationBar/NavigationBar';
+import Footer from './components/Footer/Footer';
 import { DataProvider, DataContext } from '../DataContext';
 
 import { BrowserRouter as Router, 
@@ -20,6 +21,7 @@ const App = () => {
           <NavigationBar/>
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/playlist' element={<Playlist />}/>
           </Routes>
           <Footer />
       </Router>
