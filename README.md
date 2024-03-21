@@ -1,4 +1,9 @@
-# Project Lifecycle
+# Open Sounds [![Test Coverage](https://cdn.hackernoon.com/images/2hVuiN1gfbdO9OXUxjCttPNETq73-2022-08-08T22:19:48.257Z-cl6lbgrz6002p0as65v8sfgja)](https://drakulavich.github.io/spring-boot-realworld-example-app/) ![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg) ![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+[comment]: <> (Update files to represent badges)
+Music streaming app with AI cover snippets. 
+
+
+## Project Lifecycle
 
 ### 1. Introduction
 #### Overview of the project
